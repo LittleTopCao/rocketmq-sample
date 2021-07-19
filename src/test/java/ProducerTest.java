@@ -34,6 +34,7 @@ public class ProducerTest {
          */
         // 实例化消息生产者Producer
         DefaultMQProducer producer = new DefaultMQProducer("please_rename_unique_group_name");
+//        producer.setInstanceName();
         // 设置NameServer的地址
         producer.setNamesrvAddr("localhost:9876");
         // 启动Producer实例
@@ -137,6 +138,37 @@ public class ProducerTest {
 
         // 如果不再发送消息，关闭Producer实例。
         producer.shutdown();
+    }
+
+    @Test
+    public void allParam() throws MQClientException {
+        // 实例化消息生产者Producer
+        DefaultMQProducer producer = new DefaultMQProducer();
+
+        // DefaultMQProducer 中的配置
+//        producer.setProducerGroup(); //生产者组，必须设置，否则报错
+//        producer.setCreateTopicKey(); //
+//        producer.setDefaultTopicQueueNums(); //
+//        producer.setSendMsgTimeout();
+//        producer.setCompressMsgBodyOverHowmuch();
+//        producer.setRetryTimesWhenSendFailed();
+//        producer.setRetryTimesWhenSendAsyncFailed();
+//        producer.setRetryAnotherBrokerWhenNotStoreOK();
+//        producer.setMaxMessageSize();
+//        producer.setCallbackExecutor();
+//        producer.setSendMessageWithVIPChannel();
+//        producer.setNotAvailableDuration();
+//        producer.setLatencyMax();
+//        producer.setSendLatencyFaultEnable();
+
+
+        // 设置NameServer的地址
+        producer.setNamesrvAddr("localhost:9876");
+
+        // 启动Producer实例
+        producer.start();
+
+        System.out.println(1);
     }
 
 
